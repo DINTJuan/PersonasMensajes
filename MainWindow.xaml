@@ -10,6 +10,7 @@
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
             <Button Command="{Binding Path=AbrirNPersonaCommand}">Nueva Persona</Button>
             <Button Command="{Binding Path=AbrirLPersonaCommand}">Listado de personas</Button>
+            <Button Command="{Binding Path=AbrirPersonaConsultaCommand}">Consulta persona</Button>
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="2">
             <ContentControl Content="{Binding Path=ContenidoVentana}"/>

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using PersonasMensajes.Clases;
+using PersonasMensajes.Mensajes;
 using PersonasMensajes.Servicios;
 using System;
 using System.Collections.Generic;
@@ -43,6 +45,11 @@ namespace PersonasMensajes.VM
             ListaNacionalida = lista;
             NuevaNacionalidadCommand = new RelayCommand(AñadirNacionalidad);
             AceptarNPersonaCommand = new RelayCommand(AceptarNuevaPersona);
+            WeakReferenceMessenger.Default.Register<AñadirNuevaNacionalidadMessage>
+                (this, (r, m) =>
+                {
+                    ListaNacionalida.Add(m.Value);
+                });
         }
 
         public void AñadirNacionalidad()
@@ -52,7 +59,7 @@ namespace PersonasMensajes.VM
 
         public void AceptarNuevaPersona()
         {
-            // Añadiria a la nueva Persona
+            WeakReferenceMessenger.Default.Send(new NuevaPersonaMessage(NuevaPersona));
         }
     }
 }

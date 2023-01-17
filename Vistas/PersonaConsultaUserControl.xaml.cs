@@ -17,15 +17,15 @@ using System.Windows.Shapes;
 namespace PersonasMensajes.Vistas
 {
     /// <summary>
-    /// Lógica de interacción para NuevaPersonaUserControl.xaml
+    /// Lógica de interacción para PersonaConsultaUserControl.xaml
     /// </summary>
-    public partial class NuevaPersonaUserControl : UserControl
+    public partial class PersonaConsultaUserControl : UserControl
     {
-        private NuevaPersonaUserControlVM vm;
-        public NuevaPersonaUserControl()
+        private PersonaConsultaUserControlVM vm;
+        public PersonaConsultaUserControl()
         {
             InitializeComponent();
-            vm = new NuevaPersonaUserControlVM();
+            this.vm = new PersonaConsultaUserControlVM();
             this.DataContext = vm;
         }
     }

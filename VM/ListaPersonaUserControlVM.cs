@@ -1,5 +1,7 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using PersonasMensajes.Clases;
+using PersonasMensajes.Mensajes;
 using PersonasMensajes.Servicios;
 using System;
 using System.Collections.Generic;
@@ -14,17 +16,31 @@ namespace PersonasMensajes.VM
     {
         private PersonaServicio personaservicio;
         private ObservableCollection<Persona> listaPersonas;
+        private Persona personaSeleccionada;
 
         public ObservableCollection<Persona> ListaPersonas
         {
             get { return listaPersonas; }
             set { SetProperty(ref listaPersonas, value); }
         }
+        public Persona PersonaSeleccionada
+        {
+            get { return personaSeleccionada; }
+            set { SetProperty(ref personaSeleccionada, value); }
+        }
 
         public ListaPersonaUserControlVM()
         {
             personaservicio = new PersonaServicio();
             ListaPersonas = personaservicio.SacarPersonas();
+            WeakReferenceMessenger.Default.Register<PersonaSeleccionadaMessage>
+                (this, (r, m) =>
+                {
+                    listaPersonas.Add(m);
+                });
+            
+
         }
+        
     }
 }

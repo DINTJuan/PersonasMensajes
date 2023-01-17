@@ -81,6 +81,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Mensajes\AñadirNuevaNacionalidadMessage.cs" />
+    <Compile Include="Mensajes\NuevaPersonaMessage.cs" />
+    <Compile Include="Mensajes\PersonaSeleccionadaMessage.cs" />
     <Compile Include="Servicios\NavegacionServicio.cs" />
     <Compile Include="Servicios\PersonaServicio.cs" />
     <Compile Include="Vistas\AñadirNacionalidad.xaml.cs">
@@ -92,10 +95,14 @@
     <Compile Include="Vistas\NuevaPersonaUserControl.xaml.cs">
       <DependentUpon>NuevaPersonaUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\PersonaConsultaUserControl.xaml.cs">
+      <DependentUpon>PersonaConsultaUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VM\AñadirNacionalidadVM.cs" />
     <Compile Include="VM\ListaPersonaUserControlVM.cs" />
     <Compile Include="VM\MainWindowVM.cs" />
     <Compile Include="VM\NuevaPersonaUserControlVM.cs" />
+    <Compile Include="VM\PersonaConsultaUserControlVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\NuevaPersonaUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\PersonaConsultaUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

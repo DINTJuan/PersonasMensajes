@@ -22,12 +22,14 @@ namespace PersonasMensajes.VM
 
         public RelayCommand AbrirNPersonaCommand { get; }
         public RelayCommand AbrirLPersonaCommand { get; }
+        public RelayCommand AbrirPersonaConsultaCommand { get; }
 
         public MainWindowVM()
         {
             navegacion = new NavegacionServicio();
             AbrirLPersonaCommand = new RelayCommand(AbrirListaPersona);
             AbrirNPersonaCommand = new RelayCommand(AbrirNuevaPersona);
+            AbrirPersonaConsultaCommand = new RelayCommand(AbrirPersonaConsulta);
         }
 
         public void AbrirNuevaPersona()
@@ -38,6 +40,11 @@ namespace PersonasMensajes.VM
         public void AbrirListaPersona()
         {
             ContenidoVentana = navegacion.AbrirListaPersona();
+        }
+
+        public void AbrirPersonaConsulta()
+        {
+            ContenidoVentana = navegacion.AbrirPersonaConsulta();
         }
     }
 }
