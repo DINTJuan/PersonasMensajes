@@ -36,7 +36,12 @@ namespace PersonasMensajes.VM
             WeakReferenceMessenger.Default.Register<PersonaSeleccionadaMessage>
                 (this, (r, m) =>
                 {
-                    listaPersonas.Add(m);
+                    m.Reply(PersonaSeleccionada);
+                });
+            WeakReferenceMessenger.Default.Register<NuevaPersonaMessage>
+                (this, (r, m) =>
+                {
+                    listaPersonas.Add(m.Value);
                 });
             
 

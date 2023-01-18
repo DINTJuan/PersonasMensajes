@@ -60,6 +60,7 @@ namespace PersonasMensajes.VM
         public void AceptarNuevaPersona()
         {
             WeakReferenceMessenger.Default.Send(new NuevaPersonaMessage(NuevaPersona));
+            NuevaPersona = new Persona();
         }
     }
 }
