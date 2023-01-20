@@ -169,7 +169,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Imagenes\cake.png" />
+    <Resource Include="Imagenes\person.png" />
+    <Resource Include="Imagenes\world.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\añadir.ico" />
     <Resource Include="Imagenes\personas.ico" />
